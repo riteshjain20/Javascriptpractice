@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback function</title>
+  <style></style>
+</head>
+<body>
+  <script>
+    // function random1(){
+    //   console.log("its random1 function");
+    // }
+    // function random2(){
+    //   console.log("its random2 function");
+    // }
+    // setTimeout(() => {
+    //   random1();
+    // },3000);
+    // random2();
+
+
+
+    // function random(name,callbackfn){
+    //   console.log(name);
+    //   callbackfn();
+    // }
+    // function random2(){
+    //   console.log("its a callback function");
+    // }
+    // setTimeout(() => {
+    //   random("ritesh", random2);
+    // }, 4000);
+
+
+    function calc(a,b,dosomething){
+      return dosomething(a,b);
+    }
+    const add = calc(10,20,function(n1,n2){
+      return n1+n2;
+    });
+    const subs = (a,b) => a-b;
+    const result = calc(10,50,subs);
+    console.log(add);
+    console.log(result);
+  </script>
+</body>
+</html>

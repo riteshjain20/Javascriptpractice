@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alert </title>
+</head>
+<body>
+  <!-- <button name="" onclick="showalert()">click me</button> -->
+   <!-- <button onclick="confirmfn()">Click me</button> -->
+    <ul>
+      <li id="item1" onclick="itemfn(1)">item1 <button>delete</button></li>
+      <li id="item2" onclick="itemfn(2)">item2 <button>delete</button></li>
+      <li id="item3" onclick="itemfn(3)">item3 <button>delete</button></li>
+    </ul>
+  <script>
+    // function showalert(){
+    //   alert("hello world");
+    // }
+
+    // function confirmfn(){
+    //   var c = confirm("are you sure you want to delete this file");
+    //   alert(c);
+    // }
+
+    function itemfn(itemId){
+      var result = confirm("are you sure you want to delete this item");
+      if(result){
+        alert("item deleted");
+        var listItem = document.getElementById("item"+itemId);
+        listItem.remove();
+      }
+      else{
+        alert("item not deleted");
+      }
+    }
+  </script>
+</body>
+</html>
