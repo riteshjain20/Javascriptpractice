@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async</title>
+</head>
+<body>
+  <script>
+
+    function getstudentrollno(roll,getrollno){
+      setTimeout(() => {
+        console.log(roll);
+        if(getrollno){
+          getrollno();
+        }
+      }, 2000);
+    }
+    getstudentrollno(10,()=>{
+      getstudentrollno(20,()=>{
+        getstudentrollno(30,()=>{
+          getstudentrollno(40);
+        });
+      });
+    });
+
+
+    // function asyncfn() {
+    //   console.log("async function");
+    // }
+    // setTimeout(() => {
+    //   asyncfn();
+    // }, 3000);
+
+
+    // console.log("Task 1");
+    // console.log("Task 2");
+    // setTimeout(() => {
+    //   console.log("Task 3");
+    // }, 6000);
+    // console.log("Task 4");
+  </script>
+</body>
+</html>

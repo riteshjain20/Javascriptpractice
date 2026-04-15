@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+
+    function proms(taskDone){
+      return new Promise(function(resolve,reject){
+        if(taskDone){
+          console.log("task done");
+        }
+        else{
+          console.log("task not done");
+        }
+      });
+    }
+    let onsucces=(result)=>{
+      console.log(result);
+    }
+    let onfailed=(error)=>{
+      console.log(error)
+    }
+    proms(false).then(onsucces);
+    proms(false).catch(onfailed);
+
+
+    // let taskDone = false;
+    // let pro = new Promise(function(resolve,reject){
+    //   if(taskDone){
+    //     console.log("Task done");
+    //   }
+    //   else {
+    //     console.log("task not done");
+    //   }
+    // })
+  </script>
+</body>
+</html>
